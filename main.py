@@ -21,11 +21,22 @@ air.shape(air_shape)
 def air_clicked(x, y):
 	print("Air was clicked!")
 
-def change_position():
-	k
+score = 0
+def change_score():
+  global score
+  score += 1
+  print("Score: " ,score)
 
+def change_position(x,y):
+  xpos = rand.randint(-200, 200)
+  ypos = rand.randint(-150,150)
+  air.penup()
+  air.goto(xpos,ypos)
+  print("Air was clicked!")
+  change_score()
 
 #-----events----------------
-air.onclick(air_clicked)
+air.onclick(change_position)
+
 wn = trtl.Screen()
 wn.mainloop()
